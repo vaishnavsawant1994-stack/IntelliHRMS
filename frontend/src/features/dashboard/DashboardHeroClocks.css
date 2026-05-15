@@ -1,0 +1,221 @@
+.dashboard-hero-clocks {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  /* Removed static z-index to avoid stacking context traps */
+}
+
+.dashboard-hero-clock-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  /* Base z-index */
+  transition: z-index 0s;
+}
+
+/* Elevate the card that has an open dropdown */
+.dashboard-hero-clock-wrapper:has(.clock-timezone-dropdown),
+.dashboard-hero-clock-wrapper:focus-within {
+  z-index: 50;
+}
+
+.clock-timezone-picker {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 100;
+}
+
+.clock-timezone-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  opacity: 0.6;
+}
+
+.clock-timezone-trigger:hover {
+  color: #ffffff;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.time-card--minimal .clock-timezone-trigger {
+  color: #ffffff;
+  right: 12px;
+  top: 12px;
+}
+
+.time-card--minimal .clock-timezone-trigger:hover {
+  color: #000000;
+}
+
+.clock-timezone-dropdown {
+  position: absolute;
+  top: 100%;
+  margin-top: 8px;
+  width: 240px;
+  max-height: 320px;
+  background: #ffffff;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: slideDown 0.2s ease-out;
+  z-index: 9999 !important;
+}
+
+/* Edge Case: First two clocks open right, last two open left */
+.dashboard-hero-clock-wrapper:nth-child(-n+2) .clock-timezone-dropdown {
+  left: 0;
+  right: auto;
+}
+
+.dashboard-hero-clock-wrapper:nth-child(n+4) .clock-timezone-dropdown {
+  right: 0;
+  left: auto;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.clock-timezone-search {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  background: var(--color-surface-secondary);
+  border-bottom: 1px solid var(--color-border-subtle);
+  gap: 10px;
+}
+
+.clock-timezone-search .search-icon {
+  color: var(--color-accent);
+}
+
+.clock-timezone-search input {
+  background: transparent;
+  border: none;
+  color: var(--color-text-strong);
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+}
+
+.clock-timezone-search .clear-search {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+}
+
+.clock-timezone-search .clear-search:hover {
+  color: #ffffff;
+}
+
+.clock-timezone-list {
+  overflow-y: auto;
+  flex: 1;
+  padding: 6px;
+  background: #ffffff;
+}
+
+/* Custom Scrollbar */
+.clock-timezone-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.clock-timezone-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.clock-timezone-list::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 10px;
+}
+
+.timezone-item {
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.timezone-item:hover {
+  background: var(--color-surface-secondary);
+  color: var(--color-text-strong);
+}
+
+.timezone-item.active {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.timezone-no-results {
+  padding: 20px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-hero-clocks {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .time-card--minimal:nth-of-type(1),
+  .time-card--minimal:nth-of-type(5) {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-hero-clocks {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .time-card--minimal {
+    display: none !important;
+  }
+
+  .time-card {
+    min-height: auto !important;
+    padding: 20px !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    justify-content: center !important;
+  }
+}

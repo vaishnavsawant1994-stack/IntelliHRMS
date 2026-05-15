@@ -1,0 +1,202 @@
+.employee-form-card {
+  align-content: start;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+}
+
+.employee-form-fieldset {
+  display: grid;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.employee-form-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.employee-form-group--full {
+  grid-template-columns: 1fr;
+}
+
+.employee-form-group-title {
+  grid-column: 1 / -1;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-strong);
+  margin-top: var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-surface-hover);
+}
+
+.employee-form-group-title:first-child {
+  margin-top: 0;
+}
+
+.employee-form-fieldset label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.employee-form-fieldset input:not([type="checkbox"]),
+.employee-form-fieldset select {
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1.5px solid var(--color-border-subtle);
+  background: white;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.employee-form-fieldset input:focus,
+.employee-form-fieldset select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+  outline: none;
+}
+
+.password-label {
+  position: relative;
+}
+
+.password-label input {
+  padding-right: 44px !important;
+}
+
+.employee-password-visibility-toggle {
+  position: absolute;
+  bottom: 5px;
+  right: 6px;
+  transform: none !important;
+  min-width: 32px;
+  width: 32px;
+  min-height: 32px !important;
+  padding: 0;
+  border: none;
+  background: transparent !important;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none !important;
+}
+
+.employee-password-visibility-toggle:hover {
+  background: #f1f5f9 !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border-radius: 6px;
+}
+
+.employee-password-visibility-toggle:hover {
+  background: #f1f5f9;
+  border-radius: 6px;
+}
+
+.employee-form-section--compensation {
+  grid-column: 1 / -1;
+  padding: var(--space-5);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.employee-compensation-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.employee-compensation-preview__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.employee-compensation-preview__item span {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.employee-compensation-preview__item strong {
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.checkbox-row {
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-row input {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 4px !important;
+}
+
+.tl-scope-list {
+  grid-column: 1 / -1;
+  background: #f1f5f9;
+  padding: 16px;
+  border-radius: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.employee-form-card .button-row {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 2px solid var(--color-surface-hover);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.employee-form-card .button-row button {
+  height: 44px;
+  padding: 0 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.employee-form-card .button-row button:not(.secondary) {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px var(--color-accent-soft);
+}
+
+.employee-form-card .button-row button.secondary {
+  background: white;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.employee-form-card .button-row button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
