@@ -78,3 +78,7 @@ Alternatively, go into each directory and run `npm run dev`.
 - Leave balances must exist for employees before leave approval can succeed.
 - V1 uses role-based access in code and does not include refresh tokens, audit logs, or permissions.
 - Payroll is intentionally simple in V1: one monthly record per employee.
+
+## Repository family
+
+This repository is a related HRMS variant. For the recommended primary portfolio implementation, start with [HRMS-NEW](https://github.com/vaishnavsawant1994-stack/HRMS-NEW). Preserve and compare any unique changes here before consolidation or archival.
