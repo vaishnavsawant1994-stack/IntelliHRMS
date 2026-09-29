@@ -1,5 +1,17 @@
 # HRMS Lean V1
 
+<!-- repository-profile:start -->
+## Repository profile
+
+**Purpose:** A React/Express implementation of HRMS Lean V1 covering employees, departments, attendance, leave, payroll, and role-based dashboards.
+
+**Core contents:** React frontend; Express backend; Prisma/PostgreSQL persistence; JWT authentication; documentation and frontend/backend test commands.
+
+**Current status:** The repository appears closely related to `HRMS-NEW`, but it has a smaller root workspace and fewer root-level verification tools. It should not be assumed to be the canonical or newest copy until histories and unique changes are compared.
+
+**Recommended next milestone:** Compare it with `HRMS-NEW` and `IntelliHRM`; label it as canonical, historical, or experimental and preserve any unique work before consolidation.
+<!-- repository-profile:end -->
+
 Lean, production-ready HRMS MVP built with:
 
 - React
