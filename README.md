@@ -82,3 +82,7 @@ Alternatively, go into each directory and run `npm run dev`.
 ## Repository family
 
 This repository is a related HRMS variant. For the recommended primary portfolio implementation, start with [HRMS-NEW](https://github.com/vaishnavsawant1994-stack/HRMS-NEW). Preserve and compare any unique changes here before consolidation or archival.
+
+## Complete project guide
+
+For a detailed, repository-specific explanation of product purpose, intended users, workflows, technical architecture, implementation status, validation, data/security boundaries and future milestones, read the [**Project Handbook**](docs/PROJECT_HANDBOOK.md). The handbook is a documentation assessment, not a certification of live features.
